@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Final Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script  defer src="https://d3js.org/d3.v6.min.js"></script>
+    <script type="module" src='main.js'></script>
+</head>
+<body>
+    <div class="top">
+        <h1>Are Covid Restrictions working?</h1>
+        <p class="headerP">Since the Covid-19 pandemic began, each state in the US has decided what plan they were willing to impliment to 
+            combat the pandemic. These plans have varied in there level of seriousness. I set out to find if the states that took more serious
+            steps did a better job at controlling the pandemic than those that did not. To start I found a <a href="https://wallethub.com/edu/states-coronavirus-restrictions/73818" target="_blank">ranking</a> of the states in order from
+            most restrictive to least restrictive. This ranking took into account 18 different metrics and returned a score from 1 to 100.
+            A higher score indicated less restrictive rules. I then used this ranking along with the covid-19 data from each state to see
+            what results I could infer. These are the results of that data analysis...  </p>
+    </div>
+    <hr />
+    <h2>Cases per 100k People</h2>
+    <div class="container barContainer">
+        <div class="row">
+            <div class='column'>
+                <div class="bar-chart"></div>
+            </div>
+            <div class='column' id="table">
+                <div class="subColumn">
+                    <h4 class="state"></h4>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="l">Covid Score (out of 100):</td>
+                                <td><span class="l score"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Cases per 100k people:</td>
+                                <td><span class="l cases"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="l">Percentage of Population:</td>
+                                <td><span class="l percent"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div>
+        <h2>Scatter Plot with Line of Best Fit</h2>
+        <div class="scatter"></div>
+    </div>
+    <hr />
+    <div>
+        <h2>Conclusion</h2>
+        <p class='headerP'>The bar chart shows the complete picture of the data that I am using. However, the scatter plot allows us to draw the most conclusions.
+            the line of best fit was calculated using a linear regression function however I am not sure how accurate it is. I believe it still
+            has value as it appears close enough and clearly shows the trend in the data. States will less strict Covid-19 rules have more people 
+            infected per 100k people. The only exception to this conclusion is New York. The only possible explanation that I can think of for this 
+            anomaly is that they potentially implemented stricter guidelines after the majority of the people got infected.
+        </p>
+    </div>
+</body>
+</html>
